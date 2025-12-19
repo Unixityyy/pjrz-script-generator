@@ -10,7 +10,7 @@ function generate() {
     let body = [];
 
     if (document.getElementById('lavaMat').checked) declarations.push("let matSet = false;");
-    if (document.getElementById('noVibration').checked) declarations.push("let intensitySet = false;");
+    if (document.getElementById('noVibration').checked || document.getElementById('maxVibration').checked) declarations.push("let intensitySet = false;");
 
     if (document.getElementById('rGripSpeed').checked) {
         body.push(
@@ -50,6 +50,15 @@ function generate() {
             "    if (!intensitySet) {",
             "        intensitySet = true;",
             "        PlayerSettings.VibrateIntensity = 0;",
+            "    }"
+        );
+    }
+
+    if (document.getElementById('maxVibration').checked) {
+        body.push(
+            "    if (!intensitySet) {",
+            "        intensitySet = true;",
+            "        PlayerSettings.VibrateIntensity = 1;",
             "    }"
         );
     }
