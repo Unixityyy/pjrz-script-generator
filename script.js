@@ -14,7 +14,7 @@ function generate() {
 
     if (document.getElementById('rGripSpeed').checked) {
         body.push(
-            "    if (RightController.Grip >= 0.5) {",
+            "    if (RightController.GripValue >= 0.5) {",
             "        PlayerSettings.JumpMultiplier = 2.5;",
             "        PlayerSettings.MaxJumpSpeed = 7.5;",
             "    } else {",
@@ -26,7 +26,7 @@ function generate() {
 
     if (document.getElementById('lGripSpeed').checked) {
         body.push(
-            "    if (LeftController.Grip >= 0.5) {",
+            "    if (LeftController.GripValue >= 0.5) {",
             "        PlayerSettings.JumpMultiplier = 2.5;",
             "        PlayerSettings.MaxJumpSpeed = 7.5;",
             "    } else {",
